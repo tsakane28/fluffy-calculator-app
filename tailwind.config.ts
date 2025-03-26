@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				calculator: {
+					bg: '#FAFAFA',
+					display: '#F5F5F7',
+					button: {
+						number: '#FFFFFF',
+						operation: '#F5F5F7',
+						action: '#E8E8ED',
+						equals: '#65D1D7'
+					}
 				}
 			},
 			borderRadius: {
@@ -70,25 +81,38 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'button-press': {
+					'0%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(0.97)' },
+					'100%': { transform: 'scale(1)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(10px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'button-press': 'button-press 0.15s ease-in-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'slide-up': 'slide-up 0.4s ease-out'
+			},
+			boxShadow: {
+				'calculator': '0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03)',
+				'button': '0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03)',
+				'display': 'inset 0 1px 3px rgba(0, 0, 0, 0.02)'
 			}
 		}
 	},
